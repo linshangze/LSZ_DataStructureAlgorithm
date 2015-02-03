@@ -1,0 +1,205 @@
+//////////////////////////////////////////////////////////////////////
+File Name: readLSZDataStructure.txt
+Author: Linshangze//林上泽
+Mail: linshangze163@163.com
+Create Time: 2013-08-28
+Update Time: 2014-12-29
+//////////////////////////////////////////////////////////////////////
+
+this file is to tell how I write LSZDataStructure on a whole.
+这文档将从整体说说我怎么写LSZDataStructure
+编写环境：
+ubuntu14.04
+vim7.4
+gcc4.8.2
+make3.81
+
+版本v4，版本改动：
+修改了LSZ_Search以外的代码错误，
+扩大了各数据结构对LSZ_DataType的使用，
+修改了makefile。
+
+______________________________________________________________________
+版本v5，版本改动：
+修改了LSZ_DataType的异或交换中的同变量交换错误。
+______________________________________________________________________
+table of contents
+ 内容目录
+
+--copyright
+  版权声明
+--why i code LSZDataStructure
+  为什么我写LSZDataStructure
+--implementation idea
+  实现思想
+--my naming rules
+  我的命名规则
+--program format
+  程序格式
+--basic operation of LSZDataStructure
+  LSZDataStructure的基本操作
+--数据结构内容
+
+______________________________________________________________________
+Copyright
+版权声明
+
+	The codes and files of LSZDataStructure is written by LinShangze.
+Anyother people who use the the codes or files of LSZDataStructure
+must get the permission from LinShangze.
+	LSZDataStructure里相关的代码和文档是由林上泽编写。任何人使用
+LSZDataStructure里的代码或文档必须先经林上泽允许。
+
+______________________________________________________________________
+why i code LSZDataStructure
+为什么我写LSZDataStructure
+
+	当初写这个东西到原因，是觉得数据结构是一个神奇的东西，是将人到想法
+和计算机工作方式结合的一门艺术。人的一个简单的想法，在现今到计算机中实
+现却是需要严谨的复杂的逻辑逻辑设计。自己写的这个东西没有实用性，只是为
+了学习。如果你感兴趣，欢迎你将它作为个人学习的参考。有些注释是加“中式”
+英文的，纯粹是因为想提高一下英语水平。LSZDatastructure里边是一些常用的
+数据结构的实现。
+
+______________________________________________________________________
+implementation idea
+实现思想
+
+	实现所用编程语言是我比较熟悉的c语言。
+
+______________________________________________________________________
+my naming rules
+我的命名规则
+
+precompile multiple definition
+头文件避免重包含声明宏定义
+_AUTHOR_ABOUT_H_
+
+macro error
+错误类型的宏定义，值小于0
+_AUTHOR_ERR[ABOUT]_ (< 0)
+
+macro state
+状态类型的宏定义，值大于0
+_AUTHOR_STA[ABOUT]_ (> 0)
+
+macro function
+宏定义操作
+_AUTHOR_FUN_ABOUT_DOABOUT1[ABOUT2...][_DFL]()
+
+data self-definition type
+自定义数据类型
+AUTHOR_ABOUT1[About2...]
+
+variable
+自动变量名
+about1About2[About3...]
+
+function
+函数名
+AUTHOR_ABOUT_doAbout1[About2...][_dfl](parameter1,
+										parameter2,
+										...);
+
+program format
+程序格式
+
+some rules for myself coding
+这里主要给自己的程序书写定一些格式规则
+
+文件名
+readLSZ_About.txt
+LSZ_About.h
+LSZ_AboutS.c
+testLSZ_About.c
+makefile
+
+the format of file header
+文件头的大概格式
+/*********************************************************************
+ *File Name: name
+ *Author: Linshangze
+ *Mail: mail
+ *Created Time: year-moon-day
+ *Updated Time: year-moon-day
+ ********************************************************************/
+
+/*********************************************************************
+ *simple description of the content in the file
+ *文件内容简单描述
+ ********************************************************************/
+
+/*********************************************************************
+ *table of content
+ *内容目录
+ ********************************************************************/
+
+头文件预处理宏，习惯使用文件名大写
+_AUTHOR_ABOUT_H_
+源文件预处理宏，习惯使用文件名大写
+_AUTHOR_ABOUT_C_
+
+#include ...
+
+//////////////////////////////////////////////////////////////////////
+//part of the table
+//目录小部分
+//////////////////////////////////////////////////////////////////////
+
+coding format
+编码格式
+
+注释风格:
+
+/**
+ * 函数注释、陈述
+ * statement
+ */
+type fun(parameter1,
+		 parameter2,
+		 ...)
+{
+}
+
+codes //句子注释statement
+//阶段注释
+//satement
+codes
+
+复合语句，当两句及以上时使用。
+//注释
+if(){ //注释
+}else if{ //注释
+}if{ //注释
+} //注释
+
+//注释
+for(){ //注释
+} //注释
+
+______________________________________________________________________
+basic operation of LSZDataStructure
+LSZDataStructure的基本操作
+
+1.初始化数据组织结构操作：init
+2.销毁数据组织结构操作：dest
+3.计算数据组织结构规模操作：size
+4.向数据组织结构插入元素操作：add
+5.向数据组织结构删除元素操作：del
+6.读取据组织结构元素操作：rd
+7.修改据组织结构元素操作：wt
+8.遍历组织结构元素操作：trav
+
+______________________________________________________________________
+--数据结构内容
+1.自定义基本元素数据
+2.线性表
+3.栈
+4.队列
+5.串
+6.矩阵
+7.广义表
+8.树
+9.查找
+10.排序
+

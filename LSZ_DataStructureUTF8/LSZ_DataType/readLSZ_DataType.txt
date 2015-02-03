@@ -1,0 +1,48 @@
+//////////////////////////////////////////////////////////////////////
+File Name: readLSZ_DataType.txt
+Author: linshangze
+Mail: linshangze163@163.com 
+Created Time: 2015-01-10
+Updated Time: 2015-01-10
+//////////////////////////////////////////////////////////////////////
+
+this file is to tell how I write LSZDataType
+有关LSZDataType的文档
+
+______________________________________________________________________
+table of content
+内容目录
+
+--LSZDataType in LSZDataStructure
+  在LSZDataStructure中的LSZDataType
+--implementation idea
+  实现思想
+--basic operation of LSZDataType
+  LSZDataType的基本操作
+
+______________________________________________________________________
+LSZDataType in LSZDataStructure
+在LSZDataStructure中的LSZDataType
+
+	编写LSZDataType是希望能在LSZDataStructure中的数据元素存储中使用，
+实现一种封装使用抽象元素数据，能方便改写代码。
+
+______________________________________________________________________
+implementation idea
+实现思想
+
+	现在设想两种基本的数据类型，一种是用地址标示的数据类型，一种是不定
+存储空间的数据类型。需要使用c语言的动态存储操作函数。
+
+______________________________________________________________________
+basic operation of LSZDataType
+LSZDataType的基本操作
+
+1.初始化数据类型：init
+2.销毁数据类型：dest
+3.计算数据存储大小：size
+4.读取数据值到其它类型：rd
+5.由其它类型修改数据值：wt
+6.自身类型赋值：sign
+7.自身类型数值比较：gt（大于）lt（小于）eq（等于）cmp（比较）
+

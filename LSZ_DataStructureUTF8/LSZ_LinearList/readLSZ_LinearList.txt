@@ -1,0 +1,92 @@
+//////////////////////////////////////////////////////////////////////
+File Name: readLsz_LinearList.txt
+Author: Linshangze
+Mail: linshangze163@163.com
+Create Time: 2014-12-31
+Update Time: 2015-01-15
+//////////////////////////////////////////////////////////////////////
+
+this file mainly to show what are contained in LSZ_LinearList which
+is one of the data structure of linear list.
+该文件主要是说明LSZ_LinearList所包含的内容--线性表数据结构。
+链表结构除了控制结构，每个链表通常都有一个空的结点作为头结点。
+
+______________________________________________________________________
+the structure chart of serial data structures of LSZ_LinearList
+LSZ_LinearList系列数据结构图
+
+LSZ_LinearList+
+   /L (LSZ_LinearListL) /*one-way linked list*/
+   /Sq(LSZ_LinearListSq) /*sequence list*/
+   /StL(LSZ_LinearListStL) /*static linked list*/
+   /CL (LSZ_LinearListCL) /*one-way circular linked list*/
+   /DL (LSZ_LinearListDL) /*double linked list*/
+   /DCL (LSZ_LinearListDCL) /*double circular linked list*/
+
+LSZ_LinearList+
+   /L (LSZ_LinearListL) /*单向链表*/
+   /Sq(LSZ_LinearListSq) /*顺序表*/
+   /StL(LSZ_LinearListStL) /*静态链表*/
+   /CL (LSZ_LinearListCL) /*单向循环链表*/
+   /DL (LSZ_LinearListDL) /*双向链表*/
+   /DCL (LSZ_LinearListDCL) /*双向循环链表*/
+
+______________________________________________________________________
+LSZ_LinearListL
+one-way linked list
+单向链表
+
+数据类型：
+Node, Ctl
+
+操作：
+init, dest, size, add, del, rd, wt, trav, 
+findNode, nextNode, priorNode, append, swapNextNode, swapNode
+
+______________________________________________________________________
+LSZ_LinearListSq
+sequence list
+顺序表
+
+数据类型：
+c内建, 用户定义类型
+
+操作：
+add, del, append, reverse
+______________________________________________________________________
+LSZ_LinearListStL
+static linked list
+静态链表
+
+数据类型：
+Node, Space, Length
+
+操作：
+init, malloc, free, reset
+
+______________________________________________________________________
+LSZ_LinearListCL
+one-way circular linked list
+单向循环链表
+
+该链表没有头节点，和书上定义的单向循环链表不同。
+
+数据类型：
+Node, Ctl
+
+操作：
+init, dest, size, add, del, rd, wt, trav, 
+clear, findNode, nextNode, priorNode, append, swapNode
+______________________________________________________________________
+LSZ_LinearListDL
+double linked list
+双向链表
+
+待实现
+______________________________________________________________________
+LSZ_LinearListDCL
+double circular linked list
+双向循环链表
+
+待实现
+
