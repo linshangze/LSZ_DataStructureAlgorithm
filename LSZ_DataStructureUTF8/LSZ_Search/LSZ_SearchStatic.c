@@ -16,14 +16,20 @@
 //查找函数查找失败返回为0
 
 #include <math.h>
-#include "LSZ_Search.h"
+#include "./LSZ_Search.h"
 
+//
 //名称：顺序查找
 //关键字：顺序，监视哨
 //
 //在顺序表list中查找关键字等于key的数据。
 //本查找中设置监视哨，这样可以免去每一步都要检查表list是否查找完毕。
 //为了方便实现监视哨，list的0号元素留空，并且list所占空间为count+1。
+//
+//顺序表
+//关键字
+//顺序表元素个数
+//
 int LSZ_search_sequence(LSZ_SearchE list[],
 						LSZ_SearchK key,
 						int count)

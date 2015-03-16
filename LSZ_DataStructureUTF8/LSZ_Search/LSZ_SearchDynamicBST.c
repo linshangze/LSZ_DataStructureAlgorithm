@@ -16,7 +16,7 @@
 //查找中的树结构的根都会被一个不存放元素数据的头结点指向。
 
 #include <malloc.h>
-#include "LSZ_Search.h"
+#include "./LSZ_Search.h"
 
 //名称：二叉排序树查找
 //关键字：动态查找，二叉排序树
@@ -133,13 +133,13 @@ int LSZ_search_insertBST(LSZ_SearchBTNode *nodePrevious,
 //如果被删结点有两棵子树，那么可以考虑用其前驱或后继来替代该结点。
 //假设有这么一棵树：
 //                    a
-//                  /   \
+//                  /   \_
 //                b       c
-//              /   \
+//              /   \_
 //            d       e
-//          /   \   /   \
+//          /   \   /   \_
 //         f     g h     i
-//               /  \
+//               /  \_
 //              j    k
 //现在要删除的结点是b，对该树的中序遍历顺序为fdjgbhkeiac，
 //b的前驱为g，后继为h。g不可能有右子树，因为那样的话b的前驱就在g
@@ -150,9 +150,9 @@ int LSZ_search_insertBST(LSZ_SearchBTNode *nodePrevious,
 //的操作。
 //这时又要思考一下g点的父母d的合法性了。如果d没有右孩子，如下：
 //                    a
-//                  /   \
+//                  /   \_
 //                b       c
-//              /   \
+//              /   \_
 //            d       e
 //          /
 //         f

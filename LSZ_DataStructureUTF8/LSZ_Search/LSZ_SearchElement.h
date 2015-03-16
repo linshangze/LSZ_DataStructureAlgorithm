@@ -52,7 +52,7 @@
 typedef int LSZ_SearchK;
 
 /**
- * 元素类型
+ * 查找元素类型
  */
 
 typedef struct LSZ_SearchE{ //element

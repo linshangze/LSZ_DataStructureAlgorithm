@@ -16,7 +16,7 @@
 //查找中的树结构的根都会被一个不存放元素数据的头结点指向。
 
 #include <malloc.h>
-#include "LSZ_Search.h"
+#include "./LSZ_Search.h"
 
 //名称：二叉排序平衡树查找
 //关键字：二叉平衡树，二叉排序树
@@ -73,15 +73,15 @@ int LSZ_search_treeBinarySortedBalanced(LSZ_SearchBBTNode *tree,
 //插入根结点较为简单，着重看插入叶子结点的情况。
 //(1)设有树tree1：
 //           a(2)                  b(0)
-//          /    \                /    \
+//          /    \                /    \_
 //	    b(1)      ar      =>    bl      a(0)
-//	   /    \                   ^      /    \
+//	   /    \                   ^      /    \_
 //   bl      br                 c    br      ar
 //   ^
 //   c
 //   或树tree1'：
 //           a(2)              b(0)
-//          /                 /    \
+//          /                 /    \_
 //	    b(1)          =>    bl      a(0)
 //	   /
 //    ^
@@ -92,7 +92,7 @@ int LSZ_search_treeBinarySortedBalanced(LSZ_SearchBBTNode *tree,
 //序遍历的顺序不变。
 //(2)设有树tree2：
 //           a(-2)                        b(0)
-//          /    \                       /    \
+//          /    \                       /    \_
 //        al      b(-1)     =>        a(0)     br
 //               /     \             /    \    ^
 //             bl       br         al      bl  c
@@ -100,9 +100,9 @@ int LSZ_search_treeBinarySortedBalanced(LSZ_SearchBBTNode *tree,
 //                      c
 //   或树tree2'：
 //           a(-2)                        b(0)
-//               \                       /    \
+//               \                       /    \_
 //                b(-1)     =>        a(0)     br
-//                     \
+//                     \_
 //                      ^
 //                      br
 //因为插入新结点而使树的平衡因子变为-2，在这种情况下，需要作
@@ -111,15 +111,15 @@ int LSZ_search_treeBinarySortedBalanced(LSZ_SearchBBTNode *tree,
 //遍历的顺序不变。因为不确定bl是否为NULL，所以a的平衡因子不确定。
 //(3)设有树tree3：
 //           a(2)                       a(2)               ____br(0)____
-//          /    \                     /    \             /             \
+//          /    \                     /    \             /             \_
 //     b(-1)      ar    =>        br(?)      ar   =>  b(?)               a(?)
-//    /    \                     /     \             /    \             /    \
+//    /    \                     /     \             /    \             /    \_
 //  bl      br(?)            b(?)    null\d        bl      c\null null\d      ar
-//         /     \          /    \
+//         /     \          /    \_
 //   c\null       null\d  bl      c\null
 //  或树tree3'：
 //           a(2)                   a(2)             br(0)
-//          /                      /                /     \
+//          /                      /                /     \_
 //     b(-1)            =>    br(1)        =>   b(0)       a(0)
 //         \                 /
 //          ^            b(0)
@@ -129,17 +129,17 @@ int LSZ_search_treeBinarySortedBalanced(LSZ_SearchBBTNode *tree,
 //右旋，那样树就平衡了。并且树的结点被中序遍的顺序不变。
 //(4)设有树tree4：
 //           a(-2)               a(-2)                     ____bl(0)____
-//          /    \              /    \                    /             \
+//          /    \              /    \                    /             \_
 //        al      b(1)  =>    al      bl(?)   =>      a(?)               b(?)
-//               /    \              /     \         /    \             /    \
+//               /    \              /     \         /    \             /    \_
 //          bl(?)      br      c\null       b(?)   al      c\null null\d      br
-//            /  \                         /    \
+//            /  \                         /    \_
 //      c\null    null\d             null\d      br
 //   或树tree4'：
 //           a(-2)               a(-2)                  bl(0)
-//               \                   \                 /     \
+//               \                   \                 /     \_
 //                b(1)  =>            bl(-1)   =>  a(0)       b(0)
-//               /                          \
+//               /                          \_
 //              ^                           b(0)
 //              bl
 //因为插入新结点或d结点而使树的平衡因子变为-2，在这种情况下，需要作
@@ -237,18 +237,18 @@ int LSZ_search_insertBSBT(LSZ_SearchBBTNode **tree,
 //如果被删结点有两棵子树，那么可以考虑用其前驱或后继来替代该结点。
 //在二叉排序树中假设有这么一棵树：
 //                         a
-//                       /   \
+//                       /   \_
 //                     b       c
-//                   /   \
+//                   /   \_
 //                 d       e
-//               /   \   /   \
+//               /   \   /   \_
 //              f     g h     i
-//                   /   \
+//                   /   \_
 //                  j     k
 //但在二叉排序平衡树中不会出现这样的情况的，因为上面的树不平衡。
 //现在选定用前驱代替删除结点，所以现在重新假设有树：
 //                           ___a(?)___
-//                          /          \
+//                          /          \_
 //                   ___b(?)_           c(?)/null
 //                  /        \            ^
 //         d(?)/null          e(?)/null   ...
@@ -272,7 +272,7 @@ int LSZ_search_insertBSBT(LSZ_SearchBBTNode **tree,
 //(3)如果b的左右孩子均不为空
 //   同BST树的删除操作，删除后的树为：
 //                           ___a(?)___
-//                          /          \
+//                          /          \_
 //                   ___g(?)_           c(?)/null
 //                  /        \            ^
 //         d(?)/null          e(?)/null   ...
@@ -280,7 +280,7 @@ int LSZ_search_insertBSBT(LSZ_SearchBBTNode **tree,
 //  f/null           j/null     ...
 //  或当g为空时：
 //                           ___a(?)___
-//                          /          \
+//                          /          \_
 //                   ___d(?)_           c(?)/null
 //                  /        \            ^
 //            f/null          e(?)/null   ...

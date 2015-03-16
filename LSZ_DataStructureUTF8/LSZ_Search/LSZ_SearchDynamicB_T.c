@@ -10,7 +10,7 @@
 
 #include <malloc.h>
 #include <stdlib.h>
-#include "LSZ_Search.h"
+#include "./LSZ_Search.h"
 
 //名称：B+树查找
 //关键字：B_树，B+树，多路搜索
@@ -34,7 +34,7 @@
 //    B_树是一种平衡树。
 //    例如一3阶B_树示意：
 //                     (a1,   k1,   a2,    k2    a2)
-//                      /            |            \
+//                      /            |            \_
 //      (b1,k3,b2,k4,b3)     (c1,k5,c2,k6,c3)     (e1,k7,e2)
 //       |     |     |        |     |     |         |     |
 //       n     n     n        n     n     n         n     n

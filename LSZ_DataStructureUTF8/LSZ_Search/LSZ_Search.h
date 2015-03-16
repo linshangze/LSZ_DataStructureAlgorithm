@@ -8,7 +8,7 @@
 #ifndef _LSZ_SEARCH_H_
 #define _LSZ_SEARCH_H_
 
-#include "LSZ_SearchElement.h"
+#include "./LSZ_SearchElement.h"
 
 //大于等于1小于等于46，能处理的斐波那契数极限
 #define LSZ_SEARCH_FIBONACCI_MAX 46

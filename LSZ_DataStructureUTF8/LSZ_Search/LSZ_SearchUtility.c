@@ -6,8 +6,8 @@
  ********************************************************************/
 
 #include <stdio.h>
-#include "LSZ_Search.h"
-#include "LSZ_SearchUtility.h"
+#include "./LSZ_Search.h"
+#include "./LSZ_SearchUtility.h"
 
 /**
  * 打印整形int数组。

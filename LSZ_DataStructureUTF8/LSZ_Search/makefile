@@ -13,7 +13,7 @@ vpath %.h .
 
 #macro
 INCLUDE_PATH = .
-SOURCES = testLSZ_Search.c *.c \
+SOURCES = testLSZ_Search.c \
 		  LSZ_SearchStatic.c \
 		  LSZ_SearchDynamicBST.c \
 		  LSZ_SearchDynamicBSBT.c \
